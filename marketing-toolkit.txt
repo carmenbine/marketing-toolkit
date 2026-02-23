@@ -1,0 +1,6 @@
+marketing-analytics-lite/
+  data/sample_campaigns.csv
+  src/analyze.py
+  tests/test_analyze.py
+  README.md
+  requirements.txt

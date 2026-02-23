@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketing Toolkit (UTM • A/B • SEO • Email)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Marketing Toolkit</h1>
+    <p class="sub">Practical mini-tools for campaigns, testing, SEO, and email. Built with vanilla JS.</p>
+    <div class="pillrow">
+      <span class="pill">UTM Builder</span>
+      <span class="pill">A/B Test</span>
+      <span class="pill">SEO Preview</span>
+      <span class="pill">Subject Scorer</span>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <!-- UTM BUILDER -->
+    <section class="card">
+      <h2>UTM Builder</h2>
+      <label>Base URL
+        <input id="utmBase" placeholder="https://example.com/landing" />
+      </label>
+      <div class="grid2">
+        <label>Source <input id="utmSource" placeholder="newsletter" /></label>
+        <label>Medium <input id="utmMedium" placeholder="email" /></label>
+        <label>Campaign <input id="utmCampaign" placeholder="spring_launch" /></label>
+        <label>Content <input id="utmContent" placeholder="button_hero" /></label>
+        <label>Term <input id="utmTerm" placeholder="optional keyword" /></label>
+      </div>
+      <div class="row">
+        <button id="utmBuild">Build URL</button>
+        <button class="ghost" id="utmPresetEmail">Preset: Email</button>
+        <button class="ghost" id="utmPresetPaid">Preset: Paid</button>
+      </div>
+      <label>Result
+        <textarea id="utmResult" rows="3" readonly></textarea>
+      </label>
+      <div class="row">
+        <button class="ghost" id="utmCopy">Copy</button>
+        <span id="utmMsg" class="msg"></span>
+      </div>
+    </section>
+
+    <!-- A/B TEST CALCULATOR -->
+    <section class="card">
+      <h2>A/B Test Calculator</h2>
+      <p class="small">Uses a two-proportion z-test (quick decision support).</p>
+      <div class="grid2">
+        <label>A: visitors <input id="aVisitors" type="number" min="0" value="1000" /></label>
+        <label>A: conversions <input id="aConv" type="number" min="0" value="75" /></label>
+        <label>B: visitors <input id="bVisitors" type="number" min="0" value="1000" /></label>
+        <label>B: conversions <input id="bConv" type="number" min="0" value="95" /></label>
+      </div>
+      <div class="row">
+        <button id="abRun">Run</button>
+      </div>
+      <div id="abOut" class="out"></div>
+    </section>
+
+    <!-- SEO SNIPPET PREVIEW -->
+    <section class="card">
+      <h2>SEO Snippet Preview</h2>
+      <label>Title
+        <input id="seoTitle" placeholder="Example: Affordable Marketing Analytics Dashboard" />
+      </label>
+      <label>Meta description
+        <textarea id="seoDesc" rows="3" placeholder="Write a clear value prop + keyword, keep it readable."></textarea>
+      </label>
+      <div id="seoCounts" class="out"></div>
+      <div class="serp">
+        <div class="serpTitle" id="serpTitle">Your Title Appears Here</div>
+        <div class="serpUrl" id="serpUrl">example.com › page</div>
+        <div class="serpDesc" id="serpDesc">Your meta description preview shows here.</div>
+      </div>
+    </section>
+
+    <!-- SUBJECT LINE SCORER -->
+    <section class="card">
+      <h2>Email Subject Line Scorer</h2>
+      <label>Subject line
+        <input id="subj" placeholder="Example: 3 quick wins to improve conversions this week" />
+      </label>
+      <div class="row">
+        <button id="subjScore">Score</button>
+      </div>
+      <div id="subjOut" class="out"></div>
+      <details class="small">
+        <summary>What this checks</summary>
+        <ul>
+          <li>Length target ~35–60 chars</li>
+          <li>Spammy words / too many exclamation points</li>
+          <li>Clarity (numbers, concrete nouns)</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap small">
+    <p>Tests: open DevTools → Console (app auto-runs <code>test.js</code> checks).</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="test.js"></script>
+</body>
+</html>
