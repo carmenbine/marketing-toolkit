@@ -1,3 +1,7 @@
+## Live Demo
+
+https://carmenbine.github.io/marketing-toolkit/
+
 # Marketing Toolkit (Vanilla JS)
 
 A tiny set of practical tools:
@@ -13,4 +17,4 @@ Just open `index.html`.
 Open DevTools → Console. `test.js` runs automatically and prints "All tests passed."
 
 ## Deploy (GitHub Pages)
-Settings → Pages → Deploy from branch → `main` / root.
+Settings → Pages → Deploy from branch → `main` / doc.
